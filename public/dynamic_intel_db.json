@@ -1,0 +1,26 @@
+[
+  {
+    "intel_id": "INTEL-1773203765546-0",
+    "component": "PP_VDD_MAIN",
+    "symptom_summary": "SOLVED: iPhone 14 Pro dead, 0.00A. Found short on PP_VDD_MAIN, injected 1V and C4201 got blistering hot.",
+    "confidence_score": 95,
+    "date_discovered": "2026-03-11T04:36:05.546Z",
+    "source": "Agent Web Crawl"
+  },
+  {
+    "intel_id": "INTEL-1773203765546-1",
+    "component": "CD3217",
+    "symptom_summary": "MacBook M2 820-02536 looping. 5V 0.02A on ammeter. CD3217 LDO outputs missing.",
+    "confidence_score": 50,
+    "date_discovered": "2026-03-11T04:36:05.546Z",
+    "source": "Agent Web Crawl"
+  },
+  {
+    "intel_id": "INTEL-1773203765546-2",
+    "component": "M92T36",
+    "symptom_summary": "Nintendo Switch no charge - Replaced M92T36 but now getting Error 2101-0001.",
+    "confidence_score": 50,
+    "date_discovered": "2026-03-11T04:36:05.546Z",
+    "source": "Agent Web Crawl"
+  }
+]
