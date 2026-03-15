@@ -1,75 +1,63 @@
-# React + TypeScript + Vite
+# ⚡ BoardX PRO - Deep Logic Board Diagnostics
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+BoardX PRO is a premium desktop diagnostic suite built for advanced logic board micro-soldering technicians. It replaces messy physical schematic notebooks and untamed multimeter variance with a fully integrated, algorithmic technician toolkit.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Smart Deviation Calculator:** Stop guessing if it's a short or thermal variance. Enter your multimeter reading to algorithmically determine if a component is truly failing.
+- **MacBook Power Sequence Tracer:** Interactive, guided rail-by-rail sequence flows. Tells you the expected voltage, the source IC, and exactly what to check if it's missing.
+- **Firmware vs Hardware Flowcharts:** Don't lift that Audio IC! Prevent unnecessary micro-soldering by running verified DFU/Recovery mode checks first.
+- **Local Private Database:** Save your own proprietary diagnostic readouts perfectly indexed and searchable offline.
 
-## React Compiler
+## 💻 Installation
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+BoardX PRO is distributed as a standalone desktop application.
 
-## Expanding the ESLint configuration
+### Windows
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Download the latest **BoardX Pro Setup.exe** file.
+2. Double click the installer.
+3. Open the **BoardX Pro** application from your Start Menu.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### macOS
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. Download the latest **BoardX Pro.dmg** file.
+2. Double click to mount the disk image.
+3. Drag the **BoardX Pro** app into your `Applications` folder.
+4. Open it from Launchpad.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Linux
+
+1. Download the latest **BoardX Pro.AppImage** file.
+2. Make the file executable: `chmod +x "BoardX Pro.AppImage"`
+3. Double click to run.
+
+---
+
+## 🔑 License Activation & Purchasing
+
+BoardX PRO operates under a premium offline software license model.
+
+When you download the app, you will have access to the Free Trainee features. To unlock **PRO** or **ELITE** smart tools:
+
+1. Navigate to the **Pricing & Plans** tab inside the app.
+2. Click **Purchase License Key Online**.
+3. Complete the checkout process on our secure software portal.
+4. You will be emailed a 16-character License Key (e.g. `PRO-A8X9-B2N4-PQ11`).
+5. Open the app, click an locked feature, and paste your License Key into the Activation Portal.
+6. Access granted offline!
+
+## 🛠️ For Developers (Compiling from Source)
+
+If you have source-code access and wish to compile the electron binaries locally:
+
+```bash
+# Install dependencies
+npm install
+
+# Run UI preview natively
+npm run dev
+
+# Compile Production Executables
+npm run build:electron
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-# Boardrepair
-# Boardrepair
