@@ -1489,7 +1489,7 @@ function App() {
 
             <div className="stripe-body" style={{ padding: '0 30px 30px' }}>
               <a
-                href={checkoutTier === 'pro' ? 'https://gum.co/kscsBqfpu9-7jE0qVD7bcA==' : 'https://gum.co/your_elite_permalink_here'}
+                href={checkoutTier === 'pro' ? 'https://gum.co/kscsBqfpu9-7jE0qVD7bcA==' : 'https://gum.co/8XTyUHZGrQ4OH7W2tPG0BQ=='}
                 target="_blank"
                 rel="noreferrer"
                 style={{
@@ -1542,7 +1542,7 @@ function App() {
                     // gumroad.com/l/boardx-pro, the permalink is 'boardx-pro')
                     const productPermalink = checkoutTier === 'pro'
                       ? 'kscsBqfpu9-7jE0qVD7bcA=='
-                      : 'your_elite_permalink_here';
+                      : '8XTyUHZGrQ4OH7W2tPG0BQ==';
 
                     // For rapid testing right now: we keep the prefix check alive. 
                     // REMOVE THIS IF-STATEMENT BEFORE LAUNCH AND ONLY USE THE GUMROAD FETCH!
@@ -1651,7 +1651,7 @@ function App() {
                 <div style={{ textAlign: 'center', marginBottom: 30 }}>
                   <div style={{ fontSize: 32, marginBottom: 15 }}>👑</div>
                   <h3 style={{ fontSize: 24, fontWeight: 800, margin: '0 0 10px 0', background: 'linear-gradient(135deg, #f5af19, #f12711)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Elite</h3>
-                  <div style={{ fontSize: 36, fontWeight: 900 }}>$49.99<span style={{ fontSize: 16, fontWeight: 400, color: 'var(--text-secondary)' }}> Lifetime</span></div>
+                  <div style={{ fontSize: 36, fontWeight: 900 }}>$99.99<span style={{ fontSize: 16, fontWeight: 400, color: 'var(--text-secondary)' }}> Lifetime</span></div>
                   <p style={{ fontSize: 11, color: 'var(--accent-green)', fontWeight: 800 }}>30-DAY REFUND POLICY</p>
                 </div>
                 <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 30 }}>
