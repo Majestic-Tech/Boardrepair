@@ -1526,17 +1526,60 @@ function App() {
               <button
                 className="stripe-pay-btn"
                 style={{ marginTop: 20 }}
-                onClick={() => {
-                  const input = document.getElementById('license-key-input') as HTMLInputElement;
-                  const key = input?.value.toUpperCase().trim() || '';
+                onClick={async (e) => {
+                  const btn = e.currentTarget;
+                  const originalText = btn.innerText;
+                  btn.innerText = 'Verifying with Gumroad...';
+                  btn.disabled = true;
 
-                  if (key.startsWith(checkoutTier.toUpperCase())) {
-                    setIsCheckoutOpen(false);
-                    setUserTier(checkoutTier);
-                    localStorage.setItem('boardx_user_tier', checkoutTier);
-                    alert(`✅ License Validated via Authentication Server.\n\nWelcome to BoardX ${checkoutTier.toUpperCase()}! Please restart the app if some features do not unlock immediately.`);
-                  } else {
-                    alert('❌ Invalid License Key. Please ensure you purchased the correct tier and typed the key fully.');
+                  const input = document.getElementById('license-key-input') as HTMLInputElement;
+                  const key = input?.value.trim() || '';
+
+                  try {
+                    // 🚨 GUMROAD INTEGRATION SETUP 🚨
+                    // Replace 'your_pro_permalink' and 'your_elite_permalink' with the 
+                    // actual product URL ending you create on Gumroad (e.g., if your link is 
+                    // gumroad.com/l/boardx-pro, the permalink is 'boardx-pro')
+                    const productPermalink = checkoutTier === 'pro'
+                      ? 'your_pro_permalink_here'
+                      : 'your_elite_permalink_here';
+
+                    // For rapid testing right now: we keep the prefix check alive. 
+                    // REMOVE THIS IF-STATEMENT BEFORE LAUNCH AND ONLY USE THE GUMROAD FETCH!
+                    if (key.startsWith(checkoutTier.toUpperCase())) {
+                      setIsCheckoutOpen(false);
+                      setUserTier(checkoutTier);
+                      localStorage.setItem('boardx_user_tier', checkoutTier);
+                      alert(`✅ (Test Mode) License Validated!\n\nWelcome to BoardX ${checkoutTier.toUpperCase()}!`);
+                      return;
+                    }
+
+                    // --- REAL GUMROAD API VERIFICATION ---
+                    const response = await fetch('https://api.gumroad.com/v2/licenses/verify', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({
+                        product_permalink: productPermalink,
+                        license_key: key
+                      })
+                    });
+
+                    const data = await response.json();
+
+                    if (data.success && !data.purchase.refunded && !data.purchase.chargebacked) {
+                      setIsCheckoutOpen(false);
+                      setUserTier(checkoutTier);
+                      localStorage.setItem('boardx_user_tier', checkoutTier);
+                      alert(`✅ License Formally Validated!\n\nWelcome to BoardX ${checkoutTier.toUpperCase()}!`);
+                    } else {
+                      alert('❌ Invalid or Refunded License Key. Please try again.');
+                    }
+                  } catch (error) {
+                    console.error("Gumroad API Error:", error);
+                    alert('❌ Connection Error. Unable to reach Gumroad authentication servers. Please check your internet.');
+                  } finally {
+                    btn.innerText = originalText;
+                    btn.disabled = false;
                   }
                 }}
               >
