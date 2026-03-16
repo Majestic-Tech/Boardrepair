@@ -1489,7 +1489,7 @@ function App() {
 
             <div className="stripe-body" style={{ padding: '0 30px 30px' }}>
               <a
-                href={`https://store.boardx.pro/checkout/${checkoutTier}-license`}
+                href={checkoutTier === 'pro' ? 'https://gum.co/kscsBqfpu9-7jE0qVD7bcA==' : 'https://gum.co/your_elite_permalink_here'}
                 target="_blank"
                 rel="noreferrer"
                 style={{
@@ -1541,7 +1541,7 @@ function App() {
                     // actual product URL ending you create on Gumroad (e.g., if your link is 
                     // gumroad.com/l/boardx-pro, the permalink is 'boardx-pro')
                     const productPermalink = checkoutTier === 'pro'
-                      ? 'your_pro_permalink_here'
+                      ? 'kscsBqfpu9-7jE0qVD7bcA=='
                       : 'your_elite_permalink_here';
 
                     // For rapid testing right now: we keep the prefix check alive. 
@@ -1607,7 +1607,7 @@ function App() {
                 <div style={{ textAlign: 'center', marginBottom: 30 }}>
                   <div style={{ fontSize: 32, marginBottom: 15 }}>👨‍🔧</div>
                   <h3 style={{ fontSize: 24, fontWeight: 800, margin: '0 0 10px 0' }}>Trainee</h3>
-                  <div style={{ fontSize: 36, fontWeight: 900 }}>$0<span style={{ fontSize: 16, fontWeight: 400, color: 'var(--text-secondary)' }}>/mo</span></div>
+                  <div style={{ fontSize: 36, fontWeight: 900 }}>$0<span style={{ fontSize: 16, fontWeight: 400, color: 'var(--text-secondary)' }}> Lifetime</span></div>
                   <p style={{ fontSize: 12, color: 'var(--text-secondary)', marginTop: 10 }}>Essential for beginners</p>
                 </div>
                 <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 30 }}>
@@ -1626,7 +1626,7 @@ function App() {
                 <div style={{ textAlign: 'center', marginBottom: 30 }}>
                   <div style={{ fontSize: 32, marginBottom: 15 }}>⚡</div>
                   <h3 style={{ fontSize: 24, fontWeight: 800, margin: '0 0 10px 0' }}>Master</h3>
-                  <div style={{ fontSize: 36, fontWeight: 900 }}>$14.99<span style={{ fontSize: 16, fontWeight: 400, color: 'var(--text-secondary)' }}>/mo</span></div>
+                  <div style={{ fontSize: 36, fontWeight: 900 }}>$29.99<span style={{ fontSize: 16, fontWeight: 400, color: 'var(--text-secondary)' }}> Lifetime</span></div>
                   <p style={{ fontSize: 12, color: 'var(--accent-blue)', fontWeight: 700, marginTop: 10 }}>For professional repair shops</p>
                 </div>
                 <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 30 }}>
@@ -1651,7 +1651,7 @@ function App() {
                 <div style={{ textAlign: 'center', marginBottom: 30 }}>
                   <div style={{ fontSize: 32, marginBottom: 15 }}>👑</div>
                   <h3 style={{ fontSize: 24, fontWeight: 800, margin: '0 0 10px 0', background: 'linear-gradient(135deg, #f5af19, #f12711)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Elite</h3>
-                  <div style={{ fontSize: 36, fontWeight: 900 }}>$29.99<span style={{ fontSize: 16, fontWeight: 400, color: 'var(--text-secondary)' }}>/mo</span></div>
+                  <div style={{ fontSize: 36, fontWeight: 900 }}>$49.99<span style={{ fontSize: 16, fontWeight: 400, color: 'var(--text-secondary)' }}> Lifetime</span></div>
                   <p style={{ fontSize: 11, color: 'var(--accent-green)', fontWeight: 800 }}>30-DAY REFUND POLICY</p>
                 </div>
                 <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 30 }}>
@@ -1670,8 +1670,8 @@ function App() {
             </div>
 
             <div style={{ textAlign: 'center', marginTop: 30, color: 'var(--text-secondary)', fontSize: 12 }}>
-              <p>All plans include a 7-day free trial. Cancel anytime. No questions asked.</p>
-              <p style={{ marginTop: 6 }}>🔒 Secured by Stripe. Your card details never touch our servers.</p>
+              <p>All plans grant lifetime offline access. No recurring subscriptions.</p>
+              <p style={{ marginTop: 6 }}>🔒 Secure payments processed by Gumroad.</p>
             </div>
           </div>
         </div>
